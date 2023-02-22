@@ -2,36 +2,75 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 	"time"
 )
 
 func main() {
-	// Initialize the random number generator.
-	rand.Seed(time.Now().UnixNano()) 
-	// The seed value is used to generate a sequence of random numbers.
-	// Using the same seed value will result in the same random numbers.
-	// So we use time.Now and UnixNano() to generate a current timestamp that will 
-	// Ensure a new random sequence of numbers is generated everytime.
+	rand.Seed(time.Now().UnixNano())
+	
+	// randChoice will influence which question we get.
+	randChoice := rand.Intn(2) + 1 // + 1 so we start at index of 1.
+	fmt.Println(randChoice)
+	
+	// Users score.
+	var score int = 0
+	fmt.Println(score)
 
-	// Generate a random number between 100 and 1000 millimeters.
-	mm := rand.Intn(901) + 100 // rand.Intn(901) generates 0 - 900
-	// We then + 100 onto whatever number that number is.
 
-	// Convert millimeters to meters.
-	m := float64(mm) / 1000.0
+	switch randChoice {
+	// Time questions
+	case 1:
+		// Years => Days
 
-	// Ask the user to convert millimeters to meters.
-	fmt.Printf("Convert %d millimeters to meters: ", mm)
+		// Generate a random number of years; y = years.
+		y := rand.Intn(100) + 1
 
-	// Read the user's input.
-	var answer float64
-	fmt.Scanln(&answer)
+		// Ask user to convert years to days.
+		fmt.Printf("Convert %v years to days: ", y)
 
-	// Compare the user's answer to the correct answer.
-	if answer == m {
-		fmt.Println("Correct!")
-	} else {
-		fmt.Printf("Incorrect. The answer is %.2f meters.\n", m)
+		var d int // d = days.
+		fmt.Scanln(&d)
+		
+		// Check equivalence; a = answer.
+		a := y * 365	
+        fmt.Println(a)
+
+		if d == a {
+			fmt.Printf("Correct! %v years is %v days :)", y, d)
+			score ++
+		} else {
+			fmt.Println("Incorrect :(")
+			score --
+		}	
+	case 2:
+		// Days => Years
+
+		// Generate a random number of days; d = days.
+		d := rand.Intn(3650) + 366
+
+		// Ask user to convert days to years.
+		fmt.Printf("Convert %d days to years, two decimal places: ",d)
+
+		// Read the user input as a formatted string to two decimal places.
+		var y float64 // y = years
+	    fmt.Scanln(&y)
+		y = math.Round(y*100) / 100 // Round to two decimal places.
+		
+		// Check equivalence; a = answer.
+		a := float64(d) / 365.0
+		a = float64(a)
+
+		// Comparing absolute of answer and year	
+		if math.Abs(a-y) < 0.01 {
+			fmt.Println("Correct! :)")
+			score ++
+			fmt.Println("Score is", score, ":D")
+		} else {
+			fmt.Println("Incorrect :(")
+			score --
+			fmt.Println("Score is", score, ":D")
+		}	
 	}
 }
