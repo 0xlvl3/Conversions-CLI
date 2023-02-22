@@ -11,7 +11,7 @@ This program Conversions-CLI is a simple command-line application that generates
 - Days => Years
 
 ### Conversions List 
-* This is the list of conversions I will be adding within my program *
+*This is the list of conversions I will be adding within my program*
 
 1. Length/ Distance
 - 1 inch = 2.54 centimeters
@@ -57,10 +57,10 @@ This program Conversions-CLI is a simple command-line application that generates
 
 
 ### Installation
-* Will be how you install; don't use method yet. *
-Install Go if it is not already installed.
-Download or clone this repository to your local machine.
-Open a terminal window and navigate to the directory containing the repository.
-Run the command go build to build the executable file.
-Run the executable file by entering the command ./conversion-game.
+*Will be how you install; don't use method yet.*
+- Install Go if it is not already installed.
+- Download or clone this repository to your local machine.
+- Open a terminal window and navigate to the directory containing the repository.
+- Run the command go build to build the executable file.
+- Run the executable file by entering the command ./conversion-game.
  
