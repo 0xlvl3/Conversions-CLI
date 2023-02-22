@@ -11,7 +11,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	
 	// randChoice will influence which question we get.
-	randChoice := rand.Intn(2) + 1 // + 1 so we start at index of 1.
+	randChoice := rand.Intn(3) + 1 // + 1 so we start at index of 1.
 	fmt.Println(randChoice)
 	
 	// Users score.
@@ -72,5 +72,71 @@ func main() {
 			score --
 			fmt.Println("Score is", score, ":D")
 		}	
+	case 3:
+		// Hours => Days
+		
+		// Generate random amount of days; h = hours.
+		h := rand.Intn(100000) + 100
+		fmt.Println("Answer format is integer value rounded to 1 decimal place. e.g. 103 ✓, 102.86 ✗")
+		fmt.Printf("How many days are in %v hours: ", h)
+
+		// User input to compare; h = hours.
+		var d int
+		fmt.Scanln(&d)
+
+		// Check equivalence; a = answer
+		a := float64(h) / 24 
+		fmt.Println(a)
+		a = math.Round(a*10)/10 // Round to 1 decimal place
+		fmt.Println(a)
+		answer := int(a)
+		fmt.Println(answer)
+
+		// if block to check user input == d
+	    if d == answer{
+			fmt.Printf("Correct %v hours are in %v days", h, answer)
+		} else {
+			fmt.Println("Incorrect")
+		}	
+
+	// todo: finish 4
+	case 4:
+		// Hours => Days
+		// h * d
+		
+		// Generate random amount of hours; h = hours.
+		h := rand.Intn(100000) + 100
+		fmt.Println("Answer format is integer value rounded to 1 decimal place. e.g. 103 ✓, 102.86 ✗")
+		fmt.Printf("How many days are in %v hours: ", h)
+
+		// User input to compare; h = hours.
+		var d int
+		fmt.Scanln(&d)
+
+		// Check equivalence; a = answer
+		a := float64(h) / 24
+		a = math.Round(a*10)/10 // Round to 1 decimal place
+		answer := int(a)
+
+		// if block to check user input == d
+	    if h == answer{
+			fmt.Println("Correct")
+		} else {
+			fmt.Println("Incorrect")
+		}	
+
+
+	case 5:
+		// Hours => Minutes
+
+	case 6:
+		// Minutes => Hours
+
+	case 7:
+		// Seconds => Minutes
+
+	case 8:
+		// Minutes => Seconds
+
 	}
 }
