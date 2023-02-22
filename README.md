@@ -7,10 +7,17 @@ This program Conversions-CLI is a simple command-line application that generates
 
 ### Currently Supported Conversions 
 1. Time 
+-------
 - Years => Days 
 - Days => Years
+- Hours => Days 
+- Days => Hours 
+- Hours => Minutes
+- Minutes => Hours 
+- Seconds => Minutes 
+- Minutes => Seconds
 
-### Conversions List 
+### Conversions List (to be added)
 *This is the list of conversions I will be adding within my program*
 
 1. Length/ Distance
@@ -48,13 +55,6 @@ This program Conversions-CLI is a simple command-line application that generates
 - 1 joule (J) = 0.239 calories (cal)
 - 1 kilojoule (kJ) = 0.239 kilocalories (kcal)
 - 1 calorie (cal) = 4.184 (J)
-
-8. Time 
-- 1 year = 365 days
-- 1 day = 24 hours
-- 1 hour = 60 mins
-- 1 minute = 60 seconds
-
 
 ### Installation
 *Will be how you install; don't use method yet.*
